@@ -1,6 +1,11 @@
-var a = "thishddsda h sd  asjdhj asdh"
+describe('TestBed Tests', function(){
 
-console.log(a.charAt(6))
-var b = a.search("dd")
+    browser.get('https://www.yahoo.com/');
 
-console.log(b)
+    it ('Title Validation', function() {browser.getTitle().then(function (Title) {
+
+        expect (Title).toEqual('Yahoo!');
+    });
+    });
+
+    })

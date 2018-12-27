@@ -7,7 +7,7 @@
     exports.config = {
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['./FCPS/TestBed.js'],
+        specs: ['./FCPS/TestBed.js'],
     // multiCapabilities: [{
     //   browserName: 'firefox'
     // }, {

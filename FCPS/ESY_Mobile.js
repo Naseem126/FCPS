@@ -16,12 +16,8 @@ describe('FCPS Test suite', function() {
     var Hamburger_Menu = element(by.cssContainingText("i",'menu'));
 
 
-
-
-
-
     // beforeEach(function () {
-    browser.driver.manage().window().maximize();
+    // browser.driver.manage().window().maximize();
     browser.get('https://dss-esy.insystechinc.com/auth/login');
     // browser.sleep(3000).then(function () {
     //
@@ -79,7 +75,7 @@ describe('FCPS Test suite', function() {
     it ('Title Validation', function() {browser.getTitle().then(function (Title) {
 
         expect (Title).toEqual('ESY Summer Services');
-    });
+        });
     });
     it ('ESY DB Top Left Label Validation', function () {
 

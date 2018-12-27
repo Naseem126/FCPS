@@ -1,4 +1,3 @@
 @ECHO OFF
-cd c:/FCPS_Insystech
-call protractor conf_Testbed.js
+call protractor conf-Testbed.js
 cmd /k
