@@ -14,13 +14,15 @@ exports.config = {
 
     capabilities: {
         'browserName': 'chrome',
-        'appium-version':'1.10.0',
+        'appium-version': '1.10.0',
         'platformName': 'android',
-        'platformVersion': '9.0.0',
+        'platformVersion': '9',
         'deviceName': 'emulator-5554',
-        'clearSystemFiles': 'true'
-        },
-
+        'CHROMEDRIVER_VERSION': '2.40'
+    },
+    onPrepare: function(){
+        require('./waitAbsent.js')
+    },
     // multiCapabilities: [{
     //   browserName: 'firefox'
     // }, {

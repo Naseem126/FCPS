@@ -7,7 +7,16 @@
     exports.config = {
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-        specs: ['./FCPS/TestBed.js'],
+    specs: ['./FCPS/TestBed.js'],
+        capabilities: {
+            'browserName': 'chrome',
+            'chromeOptions': {
+                'args': ['show-fps-counter=true'],
+                'mobileEmulation' : {
+                    'deviceName': 'iPhone 6/7/8'
+                }
+            }
+        },
     // multiCapabilities: [{
     //   browserName: 'firefox'
     // }, {

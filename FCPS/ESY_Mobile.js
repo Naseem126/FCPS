@@ -12,10 +12,10 @@ describe('FCPS Test suite', function() {
     var Submit_Button =  element(by.css('button[type="submit"]'));
     // var top_Left_Banner = $('.sidebar-header text-white bg-danger');
     var top_Left_Banner = $('a[href="/dashboard/reg-teacher"]');
-    var ESY_DB_Label = $('.title text-truncate');
-    var Hamburger_Menu = element(by.cssContainingText("i",'menu'));
-
-
+    var ESY_DB_Label =$('body > app-root > app-layout > div > div.sidebar-container > app-sidebar > aside > div > div.sidebar-header.text-white.bg-primary > div > div');// $('.title text-truncate');
+    var Hamburger_Menu = element(by.css('body > app-root > app-layout > div > div.page > div.topbar-container > app-topbar > nav > button.btn.btn-flat-secondary.btn-sm.btn-icon.mr-1.d-xl-none.no-shadow > i'));
+    var Register_Student = $('body > app-root > app-layout > div > div.sidebar-container > app-sidebar > aside > div > div.sidebar-nav-container > ul > span:nth-child(2) > li > a > span.list-nav-label')
+    var StudentListBox = $('.card')
     // beforeEach(function () {
     // browser.driver.manage().window().maximize();
     browser.get('https://dss-esy.insystechinc.com/auth/login');
@@ -77,9 +77,24 @@ describe('FCPS Test suite', function() {
         expect (Title).toEqual('ESY Summer Services');
         });
     });
-    it ('ESY DB Top Left Label Validation', function () {
 
-        expect (top_Left_Banner.isDisplayed());
+
+    it('Hamburger Menu Click Validation', function () {
+        expect(Hamburger_Menu.isDisplayed());
+        Hamburger_Menu.click();
+        browser.sleep(5000);
+        expect(top_Left_Banner.isDisplayed()).toBe(true);
+        // Hamburger_Menu.click();
+        // browser.sleep(5000);
+        // expect (top_Left_Banner.isDisplayed()).toBe(true);
+        // expect (invisibilityOf())
+
+    })
+
+    it ('ESY DB Top Left Label Validation', function () {
+        // Hamburger_Menu.click()
+        // browser.sleep(1000)
+        // expect (top_Left_Banner.isDisplayed());
         expect (top_Left_Banner.getText()).toEqual('Reg Teacher Dashboard');
 
     });
@@ -91,17 +106,14 @@ describe('FCPS Test suite', function() {
 
     });
 
-    it('Hamburger Menu Click Validation', function () {
-        expect(Hamburger_Menu.isDisplayed());
-        Hamburger_Menu.click();
-        browser.sleep(5000);
-        expect(top_Left_Banner.isDisplayed()).toBe(false);
-        Hamburger_Menu.click();
-        browser.sleep(5000);
-        expect (top_Left_Banner.isDisplayed()).toBe(true);
-        // expect (invisibilityOf())
+    it ('Registered Student Tab Click validation', function () {
 
-
+        Register_Student.click();
+        browser.sleep(1000);
+        // var EC=protractor.ExpectedConditions;
+        // browser.wait(EC.not(EC.presenceOf(Register_Student)), 2000);
+        // browser.driver.wait(protractor.until.elementIsNotVisible(Register_Student));
+        expect (StudentListBox.isDisplayed());
 
     })
 });
